@@ -107,7 +107,7 @@ public class CustomerMenu {
                 String newName = InputString.nextLine();
                 System.out.println("Nhập tuổi mới:");
                 int newAge = InputNumber.nextInt();
-                InputNumber.nextLine(); // Consume newline left-over
+                InputNumber.nextLine();
                 System.out.println("Nhập địa chỉ mới:");
                 String newAddress = InputString.nextLine();
 
@@ -123,7 +123,6 @@ public class CustomerMenu {
             System.out.println("=======Find Id=======");
             System.out.println("Nhập ID khach hang cần tìm kiếm : ");
             int id = InputNumber.nextInt();
-            InputString.nextLine();
             int index = CustomerManager.FindById(id);
             if (index == -1) {
                 System.out.println("Không tìm thấy khach hang có ID = " + id);

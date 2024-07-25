@@ -14,20 +14,15 @@ public class CustomerManager implements IManager<Customer>{
 
     @Override
     public void delete(int id) {
-        int index = this.list.indexOf(id);
+        int index = FindById(id);
         this.list.remove(index);
     }
 
     @Override
     public void edit(int id, Customer customer) {
-        int index = this.list.indexOf(id);
-        if (index == -1) {
-            System.out.println("Không có vị trí cần sủa :");
-        }
-        else {
+        int index = FindById(id);
             this.list.set(index, customer);
             System.out.println("Sửa khach hang thành công !");
-        }
     }
 
     @Override

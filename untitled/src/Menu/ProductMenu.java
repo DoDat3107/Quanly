@@ -79,7 +79,7 @@ public class ProductMenu {
 
     public void showMenuDelete() {
         System.out.println("============Menu Xoá==========");
-        System.out.println("nhập id sản phẩm : ");
+        System.out.println("nhập id sản phẩm muon xoa : ");
         int idDelete = InputNumber.nextInt();
         productManager.delete(idDelete);
         System.out.println("Xóa sản phẩm thành công");
@@ -122,7 +122,6 @@ public class ProductMenu {
         System.out.println("=======Find Id=======");
         System.out.println("Nhập ID sản phẩm cần tìm kiếm : ");
         int id = InputNumber.nextInt();
-        InputString.nextLine();
         int index = productManager.FindById(id);
         if (index == -1) {
             System.out.println("Không tìm thấy sản phẩm có ID = " + id);

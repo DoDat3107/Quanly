@@ -15,19 +15,15 @@ public class ProductManager implements IManager<Product> {
 
     @Override
     public void delete(int id) {
-        int index = this.list.indexOf(id);
+        int index = FindById(id);
         this.list.remove(index);
     }
 
     @Override
     public void edit(int id, Product product) {
-        int index = this.list.indexOf(id);
-        if (index == -1) {
-            System.out.println("Không có vị trí cần sủa :");
-        }
-        else {
+            int index =FindById(id);
             this.list.set(index, product);
-        }
+
     }
 
     @Override
