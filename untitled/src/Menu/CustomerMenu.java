@@ -1,9 +1,6 @@
 package Menu;
-
 import manager.CustomerManager;
 import model.Customer;
-
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
