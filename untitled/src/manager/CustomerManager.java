@@ -1,9 +1,12 @@
 package manager;
+
 import model.Customer;
+
 import java.util.ArrayList;
 
-public class CustomerManager implements IManager<Customer>{
+public class CustomerManager implements IManager<Customer> {
     private ArrayList<Customer> list = new ArrayList<>();
+
     @Override
     public void add(Customer customer) {
         this.list.add(customer);
@@ -18,8 +21,8 @@ public class CustomerManager implements IManager<Customer>{
     @Override
     public void edit(int id, Customer customer) {
         int index = FindById(id);
-            this.list.set(index, customer);
-            System.out.println("Sửa khach hang thành công !");
+        this.list.set(index, customer);
+        System.out.println("Sửa khach hang thành công !");
     }
 
     @Override

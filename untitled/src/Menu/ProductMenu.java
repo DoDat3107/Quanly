@@ -1,6 +1,8 @@
 package Menu;
+
 import manager.ProductManager;
 import model.Product;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -132,7 +134,7 @@ public class ProductMenu {
         }
     }
 
-    public void showFindByName(){
+    public void showFindByName() {
         System.out.println("=======Tìm kiếm theo Tên=======");
         System.out.println("Nhập Tên sản phẩm cần tìm kiếm : ");
         String name = InputString.nextLine();
@@ -147,7 +149,8 @@ public class ProductMenu {
         }
 
     }
-    public void showFindByPrice(){
+
+    public void showFindByPrice() {
         System.out.println("=======Tìm kiếm theo Giá gần đúng=======");
         System.out.println("Nhập Giá sản phẩm cần tìm kiếm : ");
         double price = InputNumber.nextDouble();

@@ -1,5 +1,7 @@
 package manager;
+
 import model.Product;
+
 import java.util.ArrayList;
 
 public class ProductManager implements IManager<Product> {
@@ -19,8 +21,8 @@ public class ProductManager implements IManager<Product> {
 
     @Override
     public void edit(int id, Product product) {
-            int index =FindById(id);
-            this.list.set(index, product);
+        int index = FindById(id);
+        this.list.set(index, product);
 
     }
 
