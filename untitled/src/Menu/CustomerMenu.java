@@ -65,7 +65,7 @@ public class CustomerMenu {
             System.out.println("========Menu thêm mới=======");
             System.out.println("Nhập id : ");
             int id = InputNumber.nextInt();
-            System.out.println("Nhập sản phẩm : ");
+            System.out.println("Nhập ten khach hang : ");
             String name = InputString.nextLine();
             System.out.println("Nhập tuoi : ");
             int age = InputNumber.nextInt();
@@ -73,12 +73,12 @@ public class CustomerMenu {
             String address = InputString.nextLine();
             Customer newProduct = new Customer(id, name, age, address);
             CustomerManager.add(newProduct);
-            System.out.println("Thêm sản phẩm thành công");
+            System.out.println("Thêm khach hang thành công");
         }
 
         public void showMenuDelete() {
             System.out.println("============Menu Xoá==========");
-            System.out.println("nhập id sản phẩm : ");
+            System.out.println("nhập id khach hang : ");
             int idDelete = InputNumber.nextInt();
             CustomerManager.delete(idDelete);
             System.out.println("Xóa thành công");
@@ -97,21 +97,21 @@ public class CustomerMenu {
             String address = InputString.nextLine();
             Customer editProduct = new Customer(id, name, age, address);
             CustomerManager.edit(id, editProduct);
-            System.out.println("Sửa sản phẩm thành công !");
+            System.out.println("Sửa khach hang thành công !");
         }
 
         public void showFindById() {
             System.out.println("=======Find Id=======");
-            System.out.println("Nhập ID sản phẩm cần tìm kiếm : ");
+            System.out.println("Nhập ID khach hang cần tìm kiếm : ");
             int id = InputNumber.nextInt();
             InputString.nextLine();
             int index = CustomerManager.FindById(id);
             if (index == -1) {
-                System.out.println("Không tìm thấy sản phẩm có ID = " + id);
+                System.out.println("Không tìm thấy khach hang có ID = " + id);
             } else {
                 Customer foundProduct = CustomerManager.FindAll().get(index);
 
-                System.out.println("Thông tin sản phẩm:");
+                System.out.println("Thông tin khach hang:");
                 System.out.println("ID: " + foundProduct.getId());
                 System.out.println("Tên: " + foundProduct.getName());
                 System.out.println("tuoi: " + foundProduct.getAge());
