@@ -26,6 +26,7 @@ public class CustomerManager implements IManager<Customer>{
         }
         else {
             this.list.set(index, customer);
+            System.out.println("Sửa khach hang thành công !");
         }
     }
 

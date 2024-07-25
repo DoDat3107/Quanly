@@ -85,18 +85,38 @@ public class CustomerMenu {
         }
 
         public void showMenuEdit() {
-            System.out.println("======Menu sửa :=========");
-            System.out.println("Nhập Id sửa :");
+            System.out.println("======Menu sửa khách hàng======");
+            System.out.println("Nhập ID khách hàng cần sửa:");
             int id = InputNumber.nextInt();
-            System.out.println("Nhập tên  mới : ");
-            String name = InputString.nextLine();
-            System.out.println("Nhập tuoi mới : ");
-            int age = InputNumber.nextInt();
-            System.out.println("Nhập dia chi moi : ");
-            String address = InputString.nextLine();
-            Customer editProduct = new Customer(id, name, age, address);
-            CustomerManager.edit(id, editProduct);
-            System.out.println("Sửa khach hang thành công !");
+            InputNumber.nextLine(); // Consume newline left-over
+
+
+            int index = CustomerManager.FindById(id);
+            if (index == -1) {
+                System.out.println("Không tìm thấy khách hàng có ID = " + id);
+            } else {
+
+                Customer existingCustomer = CustomerManager.FindAll().get(index);
+                System.out.println("Thông tin khách hàng cũ:");
+                System.out.println("Tên: " + existingCustomer.getName());
+                System.out.println("Tuổi: " + existingCustomer.getAge());
+                System.out.println("Địa chỉ: " + existingCustomer.getAddress());
+
+
+                System.out.println("Nhập tên mới:");
+                String newName = InputString.nextLine();
+                System.out.println("Nhập tuổi mới:");
+                int newAge = InputNumber.nextInt();
+                InputNumber.nextLine(); // Consume newline left-over
+                System.out.println("Nhập địa chỉ mới:");
+                String newAddress = InputString.nextLine();
+
+
+                Customer updatedCustomer = new Customer(id, newName, newAge, newAddress);
+
+                CustomerManager.edit(id, updatedCustomer);
+                System.out.println("Sửa thông tin khách hàng thành công!");
+            }
         }
 
         public void showFindById() {
@@ -130,9 +150,12 @@ public class CustomerMenu {
                 for (Customer customer : foundCustomer) {
                     System.out.println("ID: " + customer.getId() + ", Tên: " + customer.getName() + ", tuoi: " + customer.getAge()+" Dia chi: "+ customer.getAddress());
                 }
+
             }
 
+
         }
+
 
 
             }

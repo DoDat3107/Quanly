@@ -1,6 +1,7 @@
 package Menu;
 
 import manager.ProductManager;
+import model.Customer;
 import model.Product;
 
 import java.util.ArrayList;
@@ -85,17 +86,36 @@ public class ProductMenu {
     }
 
     public void showMenuEdit() {
-        System.out.println("======Menu sửa :=========");
-        System.out.println("Nhập Id sửa :");
+        System.out.println("======Menu sửa sản phẩm======");
+        System.out.println("Nhập ID sản phẩm cần sửa:");
         int id = InputNumber.nextInt();
-        InputString.nextLine();
-        System.out.println("Nhập tên sản phẩm mới : ");
-        String name = InputString.nextLine();
-        System.out.println("Nhập giá sản phẩm mới : ");
-        double price = InputNumber.nextDouble();
-        Product editProduct = new Product(id, name, price);
-        productManager.edit(id, editProduct);
-        System.out.println("Sửa sản phẩm thành công !");
+        InputNumber.nextLine(); // Consume newline character after reading id
+
+        // Tìm sản phẩm theo ID
+        int index = productManager.FindById(id);
+        if (index == -1) {
+            System.out.println("Không tìm thấy sản phẩm có ID = " + id);
+        } else {
+            Product existingProduct = productManager.FindAll().get(index);
+            System.out.println("Thông tin sản phẩm cũ:");
+            System.out.println("ID: " + existingProduct.getId());
+            System.out.println("Tên: " + existingProduct.getName());
+            System.out.println("Giá: " + existingProduct.getPrice());
+
+            // Nhập thông tin sản phẩm mới
+            System.out.println("Nhập tên mới:");
+            String newName = InputString.nextLine();
+            System.out.println("Nhập giá mới:");
+            double newPrice = InputNumber.nextDouble();
+            InputNumber.nextLine(); // Consume newline character after reading newPrice
+
+            // Tạo đối tượng sản phẩm mới
+            Product updatedProduct = new Product(id, newName, newPrice);
+
+            // Thực hiện chỉnh sửa thông tin sản phẩm
+            productManager.edit(id, updatedProduct);
+            System.out.println("Sửa thông tin sản phẩm thành công!");
+        }
     }
 
     public void showFindById() {
