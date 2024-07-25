@@ -1,7 +1,5 @@
 package manager;
-
 import model.Product;
-
 import java.util.ArrayList;
 
 public class ProductManager implements IManager<Product> {

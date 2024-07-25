@@ -4,6 +4,7 @@ import model.Customer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class CustomerMenu {
         CustomerManager CustomerManager = new CustomerManager();
         Scanner InputNumber = new Scanner(System.in);

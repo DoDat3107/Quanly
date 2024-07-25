@@ -1,8 +1,5 @@
 package manager;
-
 import model.Customer;
-import model.Product;
-
 import java.util.ArrayList;
 
 public class CustomerManager implements IManager<Customer>{
