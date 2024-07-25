@@ -88,7 +88,6 @@ public class CustomerMenu {
             System.out.println("======Menu sửa :=========");
             System.out.println("Nhập Id sửa :");
             int id = InputNumber.nextInt();
-            InputString.nextLine();
             System.out.println("Nhập tên  mới : ");
             String name = InputString.nextLine();
             System.out.println("Nhập tuoi mới : ");
